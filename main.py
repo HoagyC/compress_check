@@ -204,7 +204,7 @@ def main(verbose: bool = False):
         with open("examples.json", "r") as f:
             examples = json.load(f)
     else:
-        exmamples = make_questions(verbose)
+        examples = make_questions(verbose)
     
     answer_questions(examples, verbose)
     
