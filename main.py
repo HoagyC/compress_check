@@ -113,6 +113,8 @@ def make_questions(verbose: bool) -> None:
     # Save progress
     with open("examples.json", "w") as f:
         json.dump(examples, f)
+    
+    return examples
 
 def answer_questions(examples: List[Dict[str, any]], verbose: bool) -> None:
     # Use GPT-4 to try to answer the questions using the compressed paragraph
@@ -202,7 +204,7 @@ def main(verbose: bool = False):
         with open("examples.json", "r") as f:
             examples = json.load(f)
     else:
-        make_questions(verbose)
+        exmamples = make_questions(verbose)
     
     answer_questions(examples, verbose)
     
